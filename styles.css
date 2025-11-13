@@ -1767,3 +1767,239 @@ body.accessibility-widget-visible ._access-menu {
     display: none !important;
   }
 }
+
+/* RTL Support Overrides for New Pages */
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] * {
+  text-align: inherit;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+  text-align: right;
+}
+
+html[dir="rtl"] p {
+  text-align: right;
+}
+
+html[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+html[dir="rtl"] .text-center {
+  text-align: center !important;
+}
+
+/* Flexbox RTL support */
+html[dir="rtl"] .flex {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+/* Grid RTL support */
+html[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* Float RTL support */
+html[dir="rtl"] .float-left {
+  float: right !important;
+}
+
+html[dir="rtl"] .float-right {
+  float: left !important;
+}
+
+/* Margin and padding RTL support */
+html[dir="rtl"] .ml-auto {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+html[dir="rtl"] .mr-auto {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+
+/* Team member cards RTL support */
+html[dir="rtl"] .team-member,
+html[dir="rtl"] .member-card,
+html[dir="rtl"] .card {
+  text-align: right;
+}
+
+html[dir="rtl"] .team-member img,
+html[dir="rtl"] .member-card img,
+html[dir="rtl"] .card img {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Container RTL support */
+html[dir="rtl"] .container {
+  direction: rtl;
+}
+
+/* Section RTL support */
+html[dir="rtl"] section {
+  direction: rtl;
+}
+
+/* Main content RTL support */
+html[dir="rtl"] main {
+  direction: rtl;
+}
+
+/* Override any LTR-specific positioning */
+html[dir="rtl"] [style*="left:"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] [style*="text-align: left"] {
+  text-align: right !important;
+}
+
+html[dir="rtl"] [style*="text-align:left"] {
+  text-align: right !important;
+}
+
+/* Ensure RTL layout for team sections */
+html[dir="rtl"] .team-grid,
+html[dir="rtl"] .team-container,
+html[dir="rtl"] .members-grid {
+  direction: rtl;
+}
+
+html[dir="rtl"] .team-grid > *,
+html[dir="rtl"] .team-container > *,
+html[dir="rtl"] .members-grid > * {
+  text-align: right;
+}
+
+/* Blog page RTL support */
+html[dir="rtl"] .blog-post,
+html[dir="rtl"] .post-card,
+html[dir="rtl"] .blog-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .blog-post img,
+html[dir="rtl"] .post-card img,
+html[dir="rtl"] .blog-card img {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .blog-grid,
+html[dir="rtl"] .posts-grid,
+html[dir="rtl"] .blog-container {
+  direction: rtl;
+}
+
+html[dir="rtl"] .blog-grid > *,
+html[dir="rtl"] .posts-grid > *,
+html[dir="rtl"] .blog-container > * {
+  text-align: right;
+}
+
+/* Component-specific styles for Blank */
+.blank-page-section {
+  padding: 80px 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+}
+
+.blank-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.blank-placeholder {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFE8A3 100%);
+  border: 3px dashed #FFD700;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.blank-placeholder:hover {
+  border-color: #FFC700;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.15);
+}
+
+.placeholder-icon {
+  width: 80px;
+  height: 80px;
+  color: #FF6B6B;
+  margin-bottom: 0.5rem;
+}
+
+.placeholder-title {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  margin: 0 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  line-height: 1.3 !important;
+}
+
+.placeholder-text {
+  font-size: 16px !important;
+  color: #1a1a1a !important;
+  margin: 0 !important;
+  max-width: 500px;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+@media (max-width: 768px) {
+  .blank-page-section {
+    padding: 60px 0;
+  }
+  
+  .blank-placeholder {
+    padding: 3rem 1.5rem;
+  }
+  
+  .placeholder-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .placeholder-title {
+    font-size: 24px !important;
+  }
+  
+  .placeholder-text {
+    font-size: 14px !important;
+  }
+}
