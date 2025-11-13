@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Bus Ride's commitment to safe, affordable transportation for families in central Israel. Discover why parents trust our bus ride services.">
+  <meta name="keywords" content="bus ride, cheap bus rides, family transportation, about us">
+  <title>Our Story & Commitment to Safety — Bus Ride</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: static;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '608c0ef3-f1c9-4f97-acac-f283a487a3bd',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <a href="/" class="logo-link">
+          <img src="assets/bus-ride-logo.webp" alt="Bus Ride" class="logo" />
+        </a>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <button class="phone-header-btn" aria-label="Call us">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <div class="nav-cta-container">
+        <li class="nav-cta-item"><a href="/contact" class="nav-cta-btn">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>About Bus Ride</h1>
+      <h3>Dedicated to providing safe, reliable, and affordable transportation for families</h3>
+    </div>
+  </section>
+
+  <section class="about-story">
+    <div class="container">
+      <div class="about-content">
+        <h2>Our Mission: Making Every Bus Ride Safe &amp; Joyful</h2>
+        <p>Bus Ride was founded on a simple but powerful belief: every child deserves safe, reliable transportation that parents can trust completely. We understand the concerns that keep parents awake at night—wondering if their children will arrive safely at school, if the driver is qualified, if the vehicle is properly maintained. These concerns drove us to create a transportation service that prioritizes safety above all else while remaining accessible through cheap bus rides that fit family budgets.</p>
+        <p>Our journey began when our founders, themselves parents of young children in central Israel, recognized a gap in the market for truly reliable, child-focused transportation services. Too many families were struggling with inconsistent schedules, questionable safety standards, or prohibitively expensive options. We set out to change that by building a company where safety, reliability, and affordability work together seamlessly.</p>
+        <p>Today, we serve hundreds of families across Tel Aviv, Ramat Gan, Petah Tikva, and surrounding communities in central Israel. Every morning and afternoon, our fleet of modern, well-maintained buses carries precious cargo—your children—with the care and attention they deserve. When parents choose to rent a bus for a trip or enroll in our daily services, they're joining a community of families who refuse to compromise on their children's safety and wellbeing.</p>
+      </div>
+      <div class="about-image">
+        <img data-placeholder="service-9" data-context="Professional bus company office with friendly staff members and modern fleet of yellow buses visible through windows" src="assets/bus-ride-service-service-9.webp" alt="Bus Ride company headquarters" class="about-img">
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container">
+      <h2>Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+          <h3>Safety Without Compromise</h3>
+          <p>Safety isn't just a priority—it's our foundation. Every driver undergoes rigorous background checks, extensive training, and regular performance reviews. Our vehicles receive daily safety inspections and comprehensive maintenance on strict schedules that exceed industry standards.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">❤️</div>
+          <h3>Family-Centered Service</h3>
+          <p>We treat every child as if they were our own. Our drivers learn each child's name, understand their needs, and create a warm, welcoming environment during every bus ride. Parents receive responsive communication and support whenever questions or concerns arise.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⏱️</div>
+          <h3>Reliability You Can Count On</h3>
+          <p>Punctuality matters because your schedule matters. We maintain on-time performance rates that consistently exceed 98%, ensuring your children arrive at school and activities when expected. Our backup systems guarantee service continuity even during unexpected challenges.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💰</div>
+          <h3>Affordable Excellence</h3>
+          <p>Quality transportation shouldn't break your budget. Our cheap bus rides prove that affordable pricing and premium service can coexist. Through efficient operations and smart route planning, we deliver exceptional value without sacrificing any aspect of safety or quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="safety-commitment">
+    <div class="container">
+      <h2>Our Commitment to Safety</h2>
+      <div class="safety-features">
+        <div class="safety-feature">
+          <h3>Driver Excellence Program</h3>
+          <p>Every driver completes our comprehensive training program covering child safety, emergency procedures, defensive driving, and customer service. Ongoing education ensures skills remain sharp and current with the latest safety protocols. Annual recertification maintains our high standards year after year.</p>
+        </div>
+        <div class="safety-feature">
+          <h3>Vehicle Maintenance Standards</h3>
+          <p>Our maintenance program exceeds manufacturer recommendations and regulatory requirements. Daily pre-trip inspections catch potential issues before they become problems. Monthly comprehensive checks by certified mechanics ensure every system functions perfectly. Our modern fleet averages less than three years old.</p>
+        </div>
+        <div class="safety-feature">
+          <h3>Real-Time Monitoring</h3>
+          <p>GPS tracking provides parents with real-time location updates during every bus ride. Our dispatch center monitors all vehicles continuously, ready to respond immediately to any situation. Automated alerts notify parents of pickup and drop-off times, providing peace of mind throughout the day.</p>
+        </div>
+        <div class="safety-feature">
+          <h3>Emergency Preparedness</h3>
+          <p>Comprehensive emergency procedures ensure appropriate responses to any situation. Drivers carry first aid kits and receive regular medical response training. Direct communication with emergency services enables rapid response when needed. Regular drills keep everyone prepared and confident.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2>Meet Our Professional Team</h2>
+      <p>Behind every safe bus ride stands a dedicated team of professionals committed to your family's wellbeing. Our drivers, dispatchers, and support staff work together seamlessly to deliver the reliable service you deserve.</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-icon">👨‍✈️</div>
+          <h3>Experienced Drivers</h3>
+          <p>Our drivers average over 10 years of professional driving experience. Each undergoes thorough background checks, drug testing, and psychological evaluations before joining our team.</p>
+        </div>
+        <div class="team-member">
+          <div class="team-icon">📞</div>
+          <h3>Dispatch &amp; Support</h3>
+          <p>Our dispatch center operates during all service hours, providing real-time coordination and immediate response to parent inquiries or concerns.</p>
+        </div>
+        <div class="team-member">
+          <div class="team-icon">🔧</div>
+          <h3>Maintenance Team</h3>
+          <p>Certified mechanics and technicians maintain our fleet to the highest standards, ensuring every vehicle operates safely and reliably.</p>
+        </div>
+        <div class="team-member">
+          <div class="team-icon">👥</div>
+          <h3>Customer Care</h3>
+          <p>Friendly, responsive staff members handle scheduling, billing, and special requests with professionalism and attention to detail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="community">
+    <div class="container">
+      <h2>Part of Your Community</h2>
+      <div class="community-content">
+        <p>Bus Ride is more than a transportation service—we're active members of the central Israel community. We partner with local schools, community centers, and family organizations to support initiatives that benefit children and families throughout the region.</p>
+        <p>Our commitment extends beyond providing cheap bus rides. We sponsor youth sports teams, support educational programs, and participate in community safety initiatives. When you choose Bus Ride, you're supporting a local business that reinvests in the community we all call home.</p>
+        <p>We believe in building lasting relationships with the families we serve. Many of our clients have been with us for years, trusting us with multiple children as they grow. This loyalty reflects our dedication to consistent, excellent service that families can depend on year after year.</p>
+      </div>
+      <div class="cta-center">
+        <a href="/contact" class="btn-primary">Join Our Family</a>
+      </div>
+    </div>
+  </section>
+
+  <a href="https://wa.me/[whatsapp_handle]" target="_blank" class="whatsapp-float" aria-label="WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  
+    <!-- Legal Footer -->
+    <footer class="legal-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="all-rights-reserved">
+            <p>© 2025 Bus Ride. כל הזכויות שמורות.</p>
+          </div>
+          <div class="footer-social"><a href="https://facebook.com/[facebook_handle]" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://instagram.com/[instagram_handle]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+          <div class="footer-legal">
+            <a href="privacy.html" aria-label="מדיניות פרטיות">
+              מדיניות פרטיות
+            </a>
+            <span class="separator">|</span>
+            <a href="accessibility.html" aria-label="נגישות">
+              נגישות
+            </a>
+            <span class="separator">|</span>
+            <a href="terms.html" aria-label="תנאי שימוש">
+              תנאי שימוש
+            </a>
+          </div>
+        </div>
+        <div class="zappy-attribution">
+          <p>נוצר באמצעות <a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Zappy</a></p>
+        </div>
+      </div>
+    </footer>
+
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = '608c0ef3-f1c9-4f97-acac-f283a487a3bd';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('https://api.zappy5.com/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          header.style.display = 'block';
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+    <script src="script.js"></script>
+</body></html>

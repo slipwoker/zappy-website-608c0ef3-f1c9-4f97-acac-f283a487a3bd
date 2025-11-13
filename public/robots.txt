@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bus-ride-608c0ef3.zappy5.app/sitemap.xml
